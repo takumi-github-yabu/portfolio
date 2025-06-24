@@ -1,0 +1,469 @@
+/* =========================
+   リセットとベーススタイル
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* スムーズスクロール */
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    background: #f8f9fa;
+    color: #222;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   ナビゲーションバーのスタイル
+   ========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 100;
+}
+
+.nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #2d3a4b;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #2d3a4b;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #0077b6;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #2d3a4b;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* =========================
+   ヒーローセクション（トップ）
+   ========================= */
+.hero {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    justify-content: flex-start;
+}
+
+.hero-text {
+    flex: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+}
+
+.hero-desc {
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.hero-photo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    border: 4px solid #fff;
+    background: #eee;
+}
+
+/* =========================
+   セクション共通スタイル
+   ========================= */
+.section {
+    padding: 80px 0 60px 0;
+    background: #fff;
+}
+
+.bg-light {
+    background: #f4f7fa;
+}
+
+.section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #2d3a4b;
+}
+
+/* =========================
+   自己紹介セクション
+   ========================= */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.about-photo {
+    flex: 1;
+    min-width: 180px;
+}
+
+.about-photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.about-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.2em;
+    margin-bottom: 0.7em;
+    color: #0077b6;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   スキルセクション
+   ========================= */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 18px 28px;
+    font-size: 1.1rem;
+    color: #0077b6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+/* =========================
+   プロジェクトセクション
+   ========================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04);
+}
+
+/* =========================
+   お問い合わせセクション
+   ========================= */
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f8f9fa;
+    resize: none;
+}
+
+.contact-form button {
+    background: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: #023e8a;
+}
+
+/* =========================
+   フッター
+   ========================= */
+.footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   レスポンシブデザイン
+   ========================= */
+@media (max-width: 900px) {
+    .hero-flex {
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .hero-content {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .hero-photo {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .about-photo img {
+        width: 120px;
+        height: 120px;
+    }
+    .skills-list {
+        gap: 16px;
+    }
+    .section {
+        padding: 50px 0 30px 0;
+    }
+    .about-section-title {
+        font-size: 1.15rem;
+        margin-top: 1.5em;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    .section h2 {
+        font-size: 1.3rem;
+    }
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 森写真.jpg, 藪写真.jpg でも既存のCSSのままでOK */
+
+/* profile.jpg, forest.jpg はルート直下に配置している前提 */
+/* 既存のCSSのままでOK。 */
+
+#loader-bg {
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s;
+}
+#loader-text {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #0077b6;
+  letter-spacing: 0.15em;
+  animation: shakeX 1.2s cubic-bezier(.36,.07,.19,.97) infinite alternate;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+@keyframes shakeX {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-12px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+#pw-bg {
+  position: fixed;
+  z-index: 9998;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+#pw-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 36px 32px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+}
+#pw-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0077b6;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+#pw-input {
+  font-size: 1.1rem;
+  padding: 10px 16px;
+  border: 1.5px solid #bcdff1;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 18px;
+  width: 180px;
+  transition: border 0.2s;
+}
+#pw-input:focus {
+  border: 1.5px solid #0077b6;
+}
+#pw-form button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+#pw-form button:hover {
+  background: #023e8a;
+}
+#pw-error {
+  color: #c00;
+  margin-top: 10px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+} 
