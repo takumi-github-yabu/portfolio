@@ -5,35 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>藪 巧光 | ポートフォリオ</title>
     <link rel="stylesheet" href="portfolio.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- パスワード入力画面（最初に表示） -->
-    <div id="pw-bg">
-        <form id="pw-form" autocomplete="off">
-            <label for="pw-input" id="pw-label">Password</label>
-            <input type="password" id="pw-input" placeholder="Enter password" autocomplete="off" />
-            <button type="submit">Enter</button>
-            <div id="pw-error" style="color:#c00; margin-top:10px; display:none;">パスワードが違います</div>
-        </form>
-    </div>
-
-    <!-- ローディングアニメーション（PW認証後に表示） -->
-    <div id="loader-bg" style="display:none;">
-        <div id="loader-text">YabuTakumi</div>
-    </div>
-
     <!-- ナビゲーション -->
-    <nav class="navbar" style="display:none;">
+    <nav class="navbar">
         <div class="container nav-flex">
-            <div class="logo">Takemitsu Yabu</div>
+            <div class="logo">Takumi Yabu</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -43,60 +28,78 @@
     </nav>
 
     <!-- ヒーローセクション（森の写真を背景、自分の写真を丸く表示） -->
-    <section id="home" class="hero" style="background-image: url('森写真.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content hero-flex">
-            <div class="hero-text">
-                <h1>藪 巧光</h1>
-                <p class="hero-title">Engineer at a 5 Trillion Yen Automotive Company</p>
-                <p class="hero-desc">HTML / CSS / JS / VBA / SQL / Python<br>趣味：一眼カメラ・公式テニス（インカレ準優勝）</p>
-            </div>
-            <div class="hero-photo">
-                <img src="藪写真.jpg" alt="藪巧光の写真" class="profile-image">
-            </div>
+    <section id="home" class="hero" style="background:none;">
+      <div class="hero-content hero-flex hero-center">
+        <div class="hero-visual">
+          <div class="portfolio-title-on-image">Portfolio</div>
+          <div class="hero-image-circle">
+            <img src="藪写真.jpg" alt="藪巧光の写真" class="profile-image-large">
+          </div>
+          <div class="portfolio-meta-under-image">Takumi Yabu Portfolio of 2025</div>
         </div>
+      </div>
     </section>
 
     <!-- About -->
     <section id="about" class="section">
         <div class="container">
             <h2>About</h2>
+            <!-- 私について：写真左・テキスト右 -->
             <div class="about-flex">
+                <div class="about-photo about-photo-large">
+                    <img src="自己紹介.jpg" alt="自己紹介写真">
+                </div>
                 <div class="about-text">
-                    <h2 class="about-section-title">自己紹介</h2>
-                    <p>現在、<strong>売上5兆円規模の自動車部品メーカー「株式会社アイシン」</strong>にて、PLM（製品ライフサイクル管理）システムの開発に携わっています。<br>
-                    業務改善や現場の効率化を目的に、要件定義・設計・データベース連携・システム導入まで一貫して担当しています。</p>
-
+                    <h2 class="about-section-title">私について</h2>
+                    <p>
+                      <strong>Takumi Yabu<br>藪 巧光</strong><br><br>
+                      1997年生まれ、愛知県在住。<br>
+                      現在、売上 4兆円規模 の自動車部品メーカーで PLM（製品ライフサイクル管理）システムの開発 を担当しています。要件定義・設計からデータベース連携、システム導入までを一貫して手がけ、現場の業務効率化に貢献してきました。<br><br>
+                      社内では Webサイトのデザイン構築・コーディング にも携わり、エンジニア視点とUI/UXの知見を融合させて、ユーザーが直感的に操作できる分かりやすいサイト を提供しています。現場課題をシステムとWebの両面から解決できるエンジニアとして、日々スキルを磨き続けています。
+                    </p>
+                </div>
+            </div>
+            <!-- スキルセット：テキスト左・写真右 -->
+            <div class="about-flex skillset-flex">
+                <div class="about-text skillset-text">
                     <h2 class="about-section-title">スキルセット</h2>
                     <ul>
                         <li><strong>技術スキル：</strong>HTML / CSS / JavaScript / SQL / VBA / Python</li>
-                        <li><strong>実務経験：</strong>PLM・ERPシステムの開発・運用、VBA/Pythonによる業務自動化、社内DBからの帳票出力・集計、Webアプリによる現場改善</li>
+                        <li><strong>実務経験：</strong>PLM・ERPシステムの開発・運用、VBA/Pythonによる業務自動化、社内DBからの帳票出力・集計、Webサイトの構築・運用</li>
                         <li><strong>保有資格：</strong>Oracle Master Silver DBA、AWSクラウドプラクティショナー、基本情報技術者、G検定 ほか</li>
                     </ul>
-
-                    <h2 class="about-section-title">実績・貢献事例</h2>
-                    <ul>
-                        <li>製造現場の作業指示書を自動生成するツールをVBA＋SQLで構築し、年間200時間以上の工数を削減</li>
-                        <li>Web技術を活用して、社内向けの業務支援アプリを自作・展開（HTML/CSS/JS/Python）</li>
-                        <li>大規模プロジェクトにてプロジェクトリーダーを経験し、納期・品質両面で成果を上げる</li>
-                        <li>社内表彰の実績あり</li>
-                    </ul>
-
-                    <h2 class="about-section-title">人柄・趣味</h2>
-                    <ul>
-                        <li>プライベートでは、Nikon Z5を愛用し、風景や人物の撮影を楽しんでいます。</li>
-                        <li>学生時代は体育会テニス部に所属し、インカレ（全国大会）で準優勝した経験があります。</li>
-                        <li>論理的な思考と継続力を活かし、技術も人間力も磨き続ける姿勢を大切にしています。</li>
-                    </ul>
-
-                    <h2 class="about-section-title">将来の目標・このポートフォリオについて</h2>
-                    <p>本業では、さらなる業務改善・システムの内製化推進を目指し、副業ではWebアプリ開発や自動化ツール制作を通じて社会に貢献したいと考えています。<br>
-                    このポートフォリオでは、私のスキルや実績、取り組みをご紹介し、信頼されるエンジニア像をお伝えしたいと考えています。</p>
+                    <p>現在、ユーザーが見やすいWebサイトを開発中です。</p>
                 </div>
-                <div class="about-photo">
-                    <img src="藪写真.jpg" alt="プロフィール写真">
+                <div class="about-photo skillset-photo">
+                    <img src="スキルセット.jpg" alt="スキルイメージ写真" class="skillset-image-square">
                 </div>
             </div>
+            <!-- 実績・貢献事例：テキスト左・写真右 -->
+            <div class="about-flex achievements-flex">
+              <div class="about-text achievements-text">
+                <h2 class="about-section-title">実績・貢献事例</h2>
+                <ul>
+                  <li>製造現場の作業指示書作成業務を自動化するツールを構築し、日常業務の負担軽減と効率向上に寄与</li>
+                  <li>製造帳票の出力業務を自動化し、作業負荷とミスの削減に貢献</li>
+                  <li>Web技術を活用して、社内向けの業務アプリ支援サイトを構築（HTML/CSS/JS/Python）</li>
+                  <li>大規模プロジェクトにてプロジェクトリーダーを経験し、納期・品質両面で成果を上げる</li>
+                  <li><a href="https://www.talent-book.jp/aisin/stories/56723" target="_blank" rel="noopener noreferrer">私の業務：リンク</a></li>
+                </ul>
+              </div>
+              <div class="about-photo achievements-photo">
+                <img src="実績.jpg" alt="実績イメージ写真" class="achievements-image-square">
+              </div>
+            </div>
+            <h2 class="about-section-title">人柄・趣味</h2>
+            <ul>
+                <li>プライベートでは、Nikon Z5を愛用し、風景や人物の撮影を楽しんでいます。</li>
+                <li>学生時代は体育会テニス部に所属し、インカレ（全国大会）で準優勝した経験があります。</li>
+                <li>論理的な思考と継続力を活かし、技術も人間力も磨き続ける姿勢を大切にしています。</li>
+            </ul>
+            <h2 class="about-section-title">将来の目標・このポートフォリオについて</h2>
+            <p>本業では、さらなる業務改善・システムの内製化推進を目指し、副業ではWebアプリ開発や自動化ツール制作を通じて社会に貢献したいと考えています。<br>
+            このポートフォリオでは、私のスキルや実績、取り組みをご紹介し、信頼されるエンジニア像をお伝えしたいと考えています。<br>
+            将来的にはフルスタックエンジニアを目指して頑張りたいです。</p>
         </div>
     </section>
 
@@ -120,28 +123,16 @@
         <div class="container">
             <h2>Gallery</h2>
             <div class="gallery-grid">
-                <img src="森写真.jpg" alt="森の写真">
-                <img src="藪写真.jpg" alt="藪巧光の写真">
-                <img src="青森写真.jpg" alt="青森の写真">
-                <img src="軽井沢写真.jpg" alt="軽井沢の写真">
-                <img src="伊勢写真.jpg" alt="伊勢の写真">
-                <img src="伊勢2写真.jpg" alt="伊勢2の写真">
-                <img src="沖縄写真.jpg" alt="沖縄の写真">
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="カメラ写真3">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="カメラ写真4">
+                <img src="ヨーロッパ1.jpg" alt="ヨーロッパ1">
+                <img src="ヨーロッパ2.jpg" alt="ヨーロッパ2">
+                <img src="ヨーロッパ3.jpg" alt="ヨーロッパ3">
+                <img src="弘前城.jpg" alt="弘前城">
+                <img src="弘前城2.jpg" alt="弘前城2">
+                <img src="青森写真1.jpg" alt="青森写真1">
+                <img src="鶴の舞橋.jpg" alt="鶴の舞橋">
+                <img src="北海道写真1.jpg" alt="北海道写真1">
+                <img src="北海道写真2.jpg" alt="北海道写真2">
             </div>
-        </div>
-    </section>
-
-    <!-- Achievements（実績） -->
-    <section id="achievements" class="section bg-light">
-        <div class="container">
-            <h2>Achievements</h2>
-            <ul class="achievements-list">
-                <li>公式テニス インカレ準優勝（学生時代）</li>
-                <li>売上5兆円自動車メーカーでの業務効率化・システム開発</li>
-                <li>社内表彰・プロジェクトリーダー経験</li>
-            </ul>
         </div>
     </section>
 
@@ -149,12 +140,14 @@
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="お名前" required>
-                <input type="email" name="email" placeholder="メールアドレス" required>
-                <textarea name="message" rows="5" placeholder="メッセージ" required></textarea>
-                <button type="submit">送信</button>
-            </form>
+            <p>
+              メールアドレス：<a href="mailto:yabu1997t@gmail.com">yabu1997t@gmail.com</a>
+            </p>
+            <p class="sns-icons">
+              <a href="https://www.instagram.com/takumi1997t?igsh=MWcyZm1jb20zYnRpNQ==" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </p>
         </div>
     </section>
 
@@ -165,42 +158,5 @@
     </footer>
 
     <script src="portfolio.js"></script>
-    <script>
-        // 最初はPW画面のみ表示
-        document.body.style.overflow = 'hidden';
-        document.getElementById('pw-bg').style.display = 'flex';
-        document.getElementById('loader-bg').style.display = 'none';
-        document.querySelector('.navbar').style.display = 'none';
-        document.getElementById('pw-input').focus();
-
-        // パスワード認証
-        document.getElementById('pw-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var pw = document.getElementById('pw-input').value;
-            var error = document.getElementById('pw-error');
-            if (pw === '1234') {
-                document.getElementById('pw-bg').style.opacity = 0;
-                setTimeout(function() {
-                    document.getElementById('pw-bg').style.display = 'none';
-                    document.getElementById('loader-bg').style.display = 'flex';
-                    document.getElementById('loader-bg').style.opacity = 1;
-                    // ローディング演出
-                    setTimeout(function() {
-                        document.getElementById('loader-bg').style.opacity = 0;
-                        setTimeout(function() {
-                            document.getElementById('loader-bg').style.display = 'none';
-                            document.querySelector('.navbar').style.display = '';
-                            document.body.style.overflow = '';
-                        }, 600);
-                    }, 1600);
-                }, 500);
-            } else {
-                error.style.display = 'block';
-            }
-        });
-        document.getElementById('pw-input').addEventListener('input', function() {
-            document.getElementById('pw-error').style.display = 'none';
-        });
-    </script>
 </body>
 </html> 
